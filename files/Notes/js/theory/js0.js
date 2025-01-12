@@ -1,4 +1,4 @@
-# Understand programming concepts through practical activities
+#Understand programming concepts through practical activities
 Sequence
 Selection
 Iteration
