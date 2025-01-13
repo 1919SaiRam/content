@@ -16,6 +16,7 @@ Finite & Infinite Loop
 Increment and Decrement Operators
 Loops
 Repeat Loop
+Count based loop
 For Loop
 Iteration
 Nested Loop
@@ -29,9 +30,21 @@ Jump statements
 break
 continue
 
+Sub-programs
+Functions
+Need for Functions
+Function call/Function invocation
+Function parameters
+Parameterized functions vs Non Parameterized functions
+Passed value vs. parameters
+Return from function
+Functions with return value and no return value
+Function Scope
+Inbuilt functions vs User Defined Functions
+
 Events
 Lists
-Functions
+
 Use combination of these concepts to solve  problems.
 Basic introduction to Javascript.
 # -->  Programming is not difficult, if you have a strategy and practice :)
@@ -202,5 +215,37 @@ A continue statement ends the current iteration of a loop. Program control is pa
 
 Break vs. Continue   
 The break statement “jumps out” of a loop (can be used for switch also)
-The continue statement “jumps over” one iteration of the loop
+The continue statement “jumps over” one iteration of the loop .
+
+A Function is a sub-program (block of code to perform a specific task) that can be executed as required and any number of times within a larger program.
+The set of instructions that a function executes is called the Function Definition.
+Once you write a function, we can call that function into action by using its name - Function Call or Function Invocation.
+Inputs passed to the Function are called Function Parameters.
+
+A function is defined using the function keyword
+This is followed by the name of the function followed by the round brackets to pass parameters
+The body of function is written within {}
+
+Parameters vs. Arguments
+A parameter is a variable you create in  a function when you define it.
+An argument is the value equivalent to the variable (or direct value as you see here) that you pass to the function when you call it.
+
+  Naming conventions for function name
+Function names are generally written like this: getName, show_message.
+Spaces are not allowed in function names.
+Try to use only letters, digits and underscore, avoid special characters
+Keywords cannot be used to name functions.
+Choose a meaningful name for the function which clearly tells us what the function will do and avoid generic names (like x, y, tmp)
+Don’t make your names too long
+
+Types of functions
+
+Inbuilt functions
+A function that already exists in the language without you having to define it.
+Collection of such functions is called a library. Each library serves a particular purpose.
+Every programming language provides a number of inbuilt libraries.
+
+User defined functions
+A function that you define in your code to implement a specific task.
+
    
