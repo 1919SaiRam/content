@@ -79,8 +79,38 @@ Template Strings
 String Methods
 Reading Documentation
 
+Introduction to loops in JavaScript
+For Loop
+Introduction to Arrays
+Array Methods
+push() and pop()
+shift() and unshift()
+sort()
+reverse()
 
-  ------------------------------------------------------------------------------------------------------------------------------------------------------
+Searching in Array
+Array.includes(value)
+String to Array - split()
+Array to String - join()
+Nested loops
+Multidimensional Arrays
+Introduction to JS Objects
+Creating, accessing & updating objects
+
+Nested Objects
+Objects vs Arrays
+Destructuring
+Array of Objects
+Floating Point Numbers
+Special Numbers in JS
+
+Math Functions & Constants
+Arrow Functions
+Pass by value 
+Pass by reference 
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
 Use combination of these concepts to solve  problems.
 Basic introduction to Javascript.
 # -->  Programming is not difficult, if you have a strategy and practice :)
@@ -378,7 +408,7 @@ Another Non-linear Data Structure
 Graphs are used to represent, find, analyze, and optimize connections between elements (houses, airports, locations, users, articles, etc.).
 
 
-  -------------------------------------------------------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------------------------------------------------------------------------------
   ---->>  JavaScript is used for creating web pages. 
 
   
@@ -725,5 +755,541 @@ var res = str.concat(name, "! ", "How are you?");
 console.log(res);
 
 console.log( "".concat("My name is ", name) );
+
+
+Loops :- 
+  Loops run the same code multiple times.
+A for loop - only runs for a specific number of times.
+For Loop 
+Syntax:
+	for (begin ; condition ; step) {
+  		// ... loop body …
+}
+Declared with 3 optional expressions separated by  ;
+begin		-	Initialization statements
+condition	-	Conditional statements
+step		-	Expressions for updates
+
+
+for (let i=1; i<=3; i++) {
+  console.log(`Favorite Song Repeat # ${i}`);
+}
+The initialization statement is executed one time only before loop starts, to define and setup loop variable.
+The condition statement is evaluated at the beginning of every loop iteration and will continue as long as it evaluates to true.
+The final expression is executed at the end of each loop iteration, prior to the next condition check to increment or decrement your loop counter.
+
+Arrays in JavaScript :- 
+With JavaScript array variables, we can store several types of data in one place.
+Arrays can store anything as their value - primitives, another array, objects, or even functions*
+Array elements can be accessed and modified using bracket notation.
+Unlike strings, array entries are mutable & can be changed freely
+
+
+let simpleArray = ['one', 2, 'three', true, false, undefined, null];
+console.log(simpleArray[0]);            //"one"
+simpleArray[1] = "two";            	//mutation in place
+
+Array length :-
+  .length() returns the next available index in the array, that is the length of the array.
+const simpleArray = [1,2,3,4];
+for (let i=0; i < simpleArray.length; i++) {
+  console.log( simpleArray[i] );
+}
+
+We want to compare whether two variable are equal or not.
+What will be the output?
+const a = 1;
+const b = "1";
+if(a===b)
+   console.log("a & b have same values");
+else
+  console.log("a & b don't have same values");                                                    a & b don't have same values
+
+
+Equality Operators :-
+
+console.log("1" == 1)
+console.log("1" === 1)
+console.log(true == "true")
+console.log("0" == false)
+  
+== 		:	compares values only
+===  		:	compares both values and types
+
+
+Array Methods :-
+.push() appends data to the end of an array & returns the new array length.
+.pop() removes the last element from an array and returns the removed element.
+
+.shift() works like .pop(), but it removes the first element of the array.
+.unshift() works like .push(), but adds the element at the beginning of the array.
+
+
+  const arr = [1, "Kevin", null, 0, true];
+for(var itr = 0; itr < arr.length; itr++ ){
+      if(arr[itr] !== null && arr [itr] !== 0)
+          console.log(arr[itr]);
+  }
+
+
+Falsy or Truthy Values :-
+false, null, 0, "", undefined, and NaN are Falsy values in JavaScript.
+All of these will evaluate to false, if it is used as a condition.
+All values other than these are Truthy, it will evaluate to true.
+
+Sort & Reverse :-
+sort() 	- Sorts the array elements in-place, in alphabetical, ascending order.
+reverse() - Reverses the order of the elements in the given array, in-place.
+In-place: Changes will be done in the same array, you can’t assign the sorted array to another variable.
+
+  
+let arr = ['a','b','c','a','d','e','c','f','c'];
+console.log(arr.sort());
+console.log(arr);
+
+console.log(arr.reverse());
+console.log(arr);
+
+
+The initialization statement is executed one time only before loop starts, to define and setup loop variable.
+The condition statement is evaluated at the beginning of every loop iteration and will continue as long as it evaluates to true.
+The final expression is executed at the end of each loop iteration, prior to the next condition check to increment or decrement your loop counter.
+With JavaScript array variables, we can store several pieces of data in one place.
+Array elements can be accessed and modified using bracket notation.
+Unlike strings, array entries are mutable & can be changed freely.
+.length returns the next available index in the array, that is the length of the array.
+
+
+  Searching in Arrays :-
+Array.includes(element, fromIndex) -
+Checks if array contains given element     (starting from an index - optional). 
+Returns boolean value.
+
+  let arr = ['a','b','c','a','d','e','c','f','c'];
+console.log( arr.includes('a') );
+console.log( arr.includes('b', 3) );
+
+Strings or Arrays ?
+  var str = "And so the adventure begins";
+
+var arr = [ 'And', 'so', 'the', 'adventure', 'begins' ];
+
+includes() checks if array contains given element
+split() splits a string into an array of substrings
+string.split(separator)
+
+join() joins an array to form a string
+array.join(separator)
+
+
+
+const parts = "Hi how are you doing today".split(" ");
+console.log(parts);
+const parts2 = "Hi how are you doing today".split();
+console.log(parts2);
+
+var arr = ["Hi", "how", "are", "you", "doing", "today"];
+const stringFromParts = arr.join("-");
+console.log(stringFromParts);
+const stringFromParts2 = arr.join();
+console.log(stringFromParts2);
+
+Write a function reverseString(str) which takes in a string parameter,
+And returns a string which is the reverse of the original string, 
+
+Multi-Dimensional Arrays :-
+These are arrays that are nested within arrays - 2D, 3D, and so on.
+  
+1D Array:
+let x = [a,b,c,d];
+x[0] = a
+x[1] = b
+x[2] = c
+x[3] = d
+
+
+2D Array:
+let y = [[a,b],[c,d]];
+y[0] = [a,b]
+y[1] = [c,d]
+
+y[0][0] = a
+y[0][1] = b
+y[1][0] = c
+y[1][1] = d
+
+
+To access these nested array elements,
+First set of brackets refers to the entries in the outermost (the first level) array,
+Each additional pair of brackets refers to the next level of entries inside.
+let arr = [
+    [1,2,3],
+    [[10,11,12], 13, 14]
+  ];
+
+console.log( arr[1] );                                     // [ [ 10, 11, 12 ], 13, 14 ]
+console.log( arr[1][0] );                                  // [ 10, 11, 12 ]
+console.log( arr[1][0][1] );                               // 11
+console.log( arr[0][1] );                                   // 2 
+console.log( arr[1][2] );                                   //  14 
+
+
+let arr = [ [1,2],3,4 ];
+Push an empty array at the end:
+arr.push([]);
+console.log(arr);
+Add an element to that new subarray:
+arr[3].push(5);
+console.log(arr);
+Remove the new subarray:
+console.log( arr.pop() );
+console.log(arr);
+
+We will be use nested loops, i.e loop within a loop. - iteration by 
+for( ;  ; ){   // for iterating through rows
+  for( ; ; ){  // for iterating through columns
+     // do something
+  }
+}
+
+var key = ["name", "age", "designation"];   
+var value = ["Kevin", 24, "Developer"];
+
+let keyName = "age";                     // This is the key
+let indexNeeded = key.indexOf(keyName);  // This is the index of the key
+let valueNeeded = value[indexNeeded];    // Value associated with the required index.
+
+console.log(keyName + " : " + valueNeeded);
+
+Introduction to JavaScript Objects :-
+  Objects are another way to store a collection of values.
+  Objects are made up of key-value pairs know as properties.
+{
+   email: “beaver@gmail.com”,
+   name: “Beaver”
+}
+
+Creating Objects :-
+  There are 3 ways to create an object:
+1 .    Using object literal	
+2.     Empty object and then add properties
+3.     Using new keyword
+
+
+Object Literal :-
+  Object is created with curly brackets {} and made up of key-value pairs, also referred to as properties.
+const person = {
+      name: 'Dr Jack'
+};
+We’ve created an object with one property inside it, one key-value pair. 
+Every property is separated by comma, and 
+Property values can be of any datatype
+
+let shinobi = {
+  name: "Naruto Uzumaki",
+  "family": "green",
+   age: 17,
+  'village': "Leaf Village",
+   isNinja: true
+}
+console.log(typeof(shinobi.name));    // 1
+console.log(typeof(shinobi.family));  // 2 
+console.log(typeof(shinobi.age));     // 3
+console.log(typeof(shinobi.village)); // 4
+console.log(typeof(shinobi.isNinja)); // 5
+
+
+Creating an empty object and then adding properties.
+Now that we have an object we need to add one more property.
+
+When the property name is known ahead of time you can access the values of these properties using:
+Dot Notation (object.property)
+
+Accessing Objects :-
+let ob = {name: "Crio", location: "Bengaluru"};
+console.log(ob.name);   // Crio
+
+Keys :-
+  Object keys can only be strings.
+JavaScript object keys cannot be number, boolean, null, or undefined type values. 
+You can access the values of these properties using:
+Bracket Notation (test["name"])
+let ob = {1: "One"};
+//console.log(ob.1 );    error
+console.log(ob[1]);
+
+let name = "Crio"
+let ob = {name: "Criodo"}
+console.log(ob.name) // 1
+console.log(ob[name]) // 2
+
+Adding new property :-
+const details = {
+   firstName: "John ",
+   lastName: "Doe"
+}
+details.fullName = details.firstName + details.lastName;
+console.log(details.fullName);
+
+Checking Properties 
+Removing properties
+delete operator is used to remove properties.
+
+ CRUD our objects
+Create a new object called person and give it properties like name, jobTitle, email, isVerified (boolean, value = false) (Create operation)
+Print only the name and the verified status of the person. (Read operation)
+Change the isVerified status to true. (Update operation)
+Remove the property name and add two new properties firstName and lastName (Delete operation)
+Print the final object person.
+
+Objects are another way to store a collection of values. 
+Objects are made up of key-value pairs know as properties.
+
+Nested Objects :-
+Object properties can have objects as their values also.
+The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+
+  Accessing Nested Objects :-  
+const personalDetails = {
+   name: "John Doe",
+   designation: "Data Analyst",
+   age: 24,
+   address: {
+      locality: "1600 roselane colony",
+      city: "Mumbai",
+      state: "Maharashtra",
+      country: "India"
+   }
+}
+
+
+console.log (personalDetails.address); //1
+console.log (personalDetails.address.city); //2
+or
+console.log(personalDetails['address']['city']);//2
+
+  
+const userDetails = {
+    name: {
+      first: "Kapil",
+      last: "Raghuwanshi",
+    },
+    jobTitle: "JS Instructor @ Crio.do",
+    email: {
+      work: "kapil@epsilon.com",
+      personal: "",
+    },
+    status: {
+      isOnline: true,
+      isVerified: false,
+    }
+  }
+Use the object given here .
+Update the first and last properties with your details. 
+Add new property isProMember to the status and set it to false.
+
+  
+Object Destructuring :-
+  The destructuring assignment syntax in JavaScript expression makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+  Object destructuring can extract multiple properties in one statement
+
+const obj = { name : "Ravi" , age :20 } ;
+var name = obj.name;    
+   // unpacking object without destructuring
+var age = obj.age;
+const { name, age } = obj; //unpacking object properties using destructuring
+
+
+Arrays are like objects in JS
+Arrays in JS do not have a data type but are instead treated as objects with their indices as properties of the object, and elements of the array as values.
+Note: typeof arr; // “object”
+
+Object vs Array :-
+  const obj = {"name":"crio.do"};
+  const arr = [ 4, 8, 0, 6, 7 ] ;
+
+If typeof for both arr and obj returns object how can we differentiate between the two?
+ Array.isArray(obj);   //false
+ Array.isArray(arr);   //true
+
+Array Destructuring :- 
+  Destructuring works for Arrays as well.
+const [a, b] = [10, 20]; //a = 10, b = 20
+You give an array of string.
+Use the destructuring syntax to store first three array values in variables.
+Return the merged string formed by three variables. 
+Please note: Length of the array will always be greater than or equal to three.
+
+  Let’s say we have 30  objects of same type and if we want to perform operations like insertion or deletion it will be cumbersome task.
+  
+Array of Objects :-
+
+  
+var student = [
+
+      {
+       name: "Kevin",
+       rollNumber: 10,
+       stream: "PCM"
+      },
+
+      {
+        name: "Martin",
+        rollNumber: 20,
+        stream: "PCM"
+      },
+
+      {
+         name: "Robert",
+         rollNumber: 30,
+         stream: "PCB"
+      }
+]
+
+o - Access array of objects
+
+console.log(student[1].name)       //Martin
+//How to id of 3rd student
+console.log(student[2]['std_id'])   //30
+
+Given an array of objects as an argument, we have to return the name of student with maximum marks?   ( Length of the array always greater than 0)
+
+Floating Point Numbers :- 
+  JavaScript treats decimals as floating point numbers.
+Operations like addition, multiplication, etc are subject to rounding error.
+
+   Special Numbers :-
+Infinity
+let scale = 0;
+let a = 1 / scale;
+console.log(a);
+
+NaN
+let scale = 0;
+let a = -1 / scale;
+console.log(a);
+
+- 0
+let scale = 1;
+let a = -0 / scale;
+console.log(a);
+
+
+Object properties can have objects as their values also.
+The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+The destructuring assignment syntax in JavaScript expression makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+JavaScript treats decimals as floating point numbers.
+
+  
+Math Functions
+The JavaScript Math object allows you to perform mathematical tasks on numbers.
+Solving the earlier problem, we use truncate method. 
+
+Math.trunc(x) returns the integer part of x.
+console.log(Math.trunc(303.3*3));    //909
+
+
+ Math.round  :-
+Without Math Function
+var a =  4;
+var b = 9;
+console.log(a/b);  // 0.4444444444444444
+
+var a =  4;
+var b = 8;
+console.log(a/b); // 0.5
+
+
+With Math Function
+var a =  4;
+var b = 9;
+console.log(Math.round(a/b));   // 0 
+
+var a =  4;
+var b = 8;
+console.log(Math.round(a/b));   // 1
+
+Math.floor
+Without Math Function
+var a =  25;
+var b = 17;
+console.log(a/b);  // 1.4705882352941178
+
+With Math Function
+var a =  4;
+var b = 9;
+console.log(Math.floor(a/b));   // 1
+
+Constants :- 
+Similarly, we have some constant values as well for example:  Math. PI
+Math.PI represents the ratio of the circumference of a circle to its diameter, approximately 3.14159
+𝙼𝚊𝚝𝚑.𝙿𝙸 = π ≈ 3.14159
+
+Give a function, which take in radius as an argument, return the circumference of a circle.  
+Circumference of Circle =  2*Pi *r
+
+Math.abs
+console.log(Math.abs(-89.09));                  // 89.09 
+console.log(Math.abs(-0));                      // 0
+
+Math.sqrt
+console.log(Math.sqrt(25));                     // 5
+console.log(Math.abs(-100));                    // NaN
+
+
+Function Expressions :-
+  
+  Function Declaration
+function display() {
+    console.log('Hello');
+}
+display();  // Hello
+
+
+  Function Expression
+function (){
+    console.log('Hello)
+}
+
+We assign it to a variable
+var call = function (){
+    console.log('Hello')   // Hello
+}
+call();
+
+  
+Removed ‘function’ :-
+  
+Function Expression
+var call = function (){
+    console.log('Hello')
+}
+call();
+
+		
+var call = () {
+     console.log('Hello');
+}
+call();    Added ‘arrow’
+
+
+var call = () => {
+     console.log('Hello');
+}
+call();  
+
+Arrow Functions  :-
+  There’s another very simple and concise syntax for creating functions, that’s often better than Function Expressions.
+  It is written with a () => {} format, where => is called the fat-arrow or just arrow.
+
+  If no argument then simply parenthesis.
+        var call = () => console.log('Hello');
+        call();   // Hello
+  If we have only one argument, then parentheses around parameters can be omitted. 
+        var call = (a) => console.log(a);
+        call(8);   // Hello
+       var call = a => console.log(a);
+        call(8);   // Hello
+
 
 
