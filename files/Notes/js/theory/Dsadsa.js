@@ -375,3 +375,69 @@ Search for a number in a sorted array where we don’t know whether array is in 
 Given an array of lowercase letters sorted in ascending order, find the smallest letter in the given array greater than a given key
 OR Given an array of numbers in ascending order, find an element that has the minimum difference with the given key
 Find the maximum value in a given Bitonic array (array which first increases then decreases and all elements are unique)
+
+
+Binary Search problems
+Book Reading
+Find the Kth smallest element in a matrix
+
+Bit Manipulation
+Binary Representation
+Shift Operators (<<, >>)
+Bitwise Operators (|, &, ^, ~)
+Bit Mask
+Solve problems
+Swap the Odd and Even bits of an integer
+Reverse the bits of a given integer
+Find the two non-repeating elements in an array of repeating elements
+
+Binary Representation of Integers
+Use 1s and 0s to represent integers
+Signed vs Unsigned integers
+How to represent -ve numbers (signed integers)?
+The 1st bit represents the sign
+Two's complement representation (not critical for DSA problems)
+
+Shifting Integers
+
+Logical Shifting
+Left Shift Operator (<<)
+Right Shift Operator (>>)
+Relation with Division and Multiplication by 2
+Examples
+
+Arithmetic Shifting (not critical for DSA problems)
+Preserves the sign in a signed integer during shifting
+
+Bitwise Operators and Masks
+Operators
+OR (|)
+AND (&)
+XOR (^) 
+Complement (~)
+Examples
+Masks (particular combination of bits) can be created and used in conjunction with the Bitwise Operators to: 
+Set a particular bit
+Get a particular bit
+Clear a particular bit 
+Examples
+Swap Two Numbers
+Problem Description
+Write a program to Swap two numbers.
+Can we use Bitwise Operations to hack this problem?
+Find the Duplicate Number
+Problem Description
+Given an array num containing n + 1 integers, where each integer is between 1 and n (inclusive), hence at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one.
+
+Can we use Bitwise Operations to hack this problem?
+
+Activity #1 - Swap the Odd and Even bits of an integer
+Tip
+Writing smaller methods like FlipBit(), IsBitSet(), SetBit(), GetBit() are very useful to have while solving problems.
+
+  Activity #2 - Reverse the bits of a given integer
+Activity #3 - Find the two non-repeating elements in an array of repeating elements
+
+Count the number of one bits in an integer
+Find the number of bits to be flipped
+
