@@ -7,10 +7,29 @@ Keywords
 Data types
 Variables
 Arithmetic Operators
-Events
+Relational operators
+Conditional operators
+Loop
+Condition based Loop
+While Loop
+Finite & Infinite Loop
+Increment and Decrement Operators
+Loops
+Repeat Loop
+For Loop
+Iteration
+Nested Loop
 
 Selection
-Iteration
+If statement
+if-else statement
+If-else if statement
+switch
+Jump statements
+break
+continue
+
+Events
 Lists
 Functions
 Use combination of these concepts to solve  problems.
@@ -89,5 +108,99 @@ You can also assign a value to the variable when you declare it:
 
 let carName = "Volvo";
 
+Initializing a variable means specifying an initial value to assign to it right away, instead of doing it later in the program.
+In simple terms, you can declare a variable & assign it a value at the same time, this is known as variable Initialization.
+  
+The syntax for variable declaration is as follows −
+var variable_name;
+Examples
+var age;
+var marks;
+var name;
+
+The syntax for variable initialization is as follows −
+var variable_name=value;
+Examples
+var age = 10;
+var marks = 33.5;
+var name =”crio”
+
+Basic Arithmetic Operators 
++    Addition
+-     Subtraction
+*     Multiplication
+/     Division
+**    Exponent
+%     Modulus
+
+  >,<,>=,<=,==,!= are called Relational Operators or Comparison Operators.
+  
+  Conditional Operator - &&  , ||
+  Repeating a sequence of steps more than once  is called repetition or a loop.
+
+  Condition based loop is the one that continues repeating till the condition is true.
+  
+  A While Loop is used to implement Conditional Loop in Programming
+  The While Loop is used to repeat a block of code as many times as the condition remains true.
+
+  Condition based loop are the ones that stop when the condition becomes false
+  If this runs a finite number of times, it is a Finite Loop
+  Else it is an Infinite Loop
+
+  Condition based loops can use the comparison operators as well as conditional operators 
+
+Increment & Decrement Operators
+++ ; -- 
+
+  Count based Loops - Repeat Loop and For Loop.
+
+ REPEAT LOOP
+When we have to repeat a sequence of instructions, a known number of times.
+ FOR LOOP
+When we have to repeat a sequence of instructions, a known number of times AND we have to increment/decrement values after each iteration.
+  WHILE LOOP
+When we need to plainly execute a loop till a condition turns false and you do not know beforehand how many times to execute the loop.
+
+  Nested loops
 
 
+Selection is a programming construct that we use to decide which path (set of steps) to take
+
+ if…else if..else conditional statements.
+
+   What are the difference & similarities between While loop & If…else? 
+SIMILARITIES
+Both of them check for a condition to be true.
+Both of them execute a block of code.
+DIFFERENCES
+“while” loop executes multiple times whereas “if..else” executes the statements only one time.
+“If” is having “else” block additionally whereas “while” loop has no additional block attached to it.
+
+  Switch Statement
+
+switch(expression) {                                 
+case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+Use the switch statement to select one of many code blocks to be executed. 
+Difference with if condition is that Switch can only compare the expression to different values (== operator) (values here would be x, y) and cannot evaluate other conditions (>, < etc.)
+Break is a Jump Statement that moves control to the end of the Switch or end of a Loop also. 
+
+  
+  Switch vs. If…else
+ A switch statement can replace multiple if checks. It gives a more descriptive way to compare a value with multiple variants.
+In the case of 'if-else' statement, either the 'if' block or the 'else' block will be executed based on the condition.
+While in the case of the 'switch' statement, one case after another will be executed until the break keyword is found, or the default statement is executed.
+A continue statement ends the current iteration of a loop. Program control is passed from the continue statement to the end of the loop body.
+
+Break vs. Continue   
+The break statement “jumps out” of a loop (can be used for switch also)
+The continue statement “jumps over” one iteration of the loop
+   
