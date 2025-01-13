@@ -23,3 +23,10 @@ a set of rules used to determine if a certain string of words forms a valid sent
  a set of rules determining if a certain phrase makes sense. Eg. “I ate a Burger” makes sense but “A burger ate me “ doesn’t.
 
    
+ Variables to store and access data when a program is executing. 
+  
+Memory locations (where data is stored) have addresses
+We need a reference to this memory location to access the value
+This memory reference is called variable
+When we create a variable, memory is reserved for this variable
+Variable acts as a memory container that can store a value
