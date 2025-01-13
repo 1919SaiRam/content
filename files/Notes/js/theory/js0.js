@@ -248,4 +248,6 @@ Every programming language provides a number of inbuilt libraries.
 User defined functions
 A function that you define in your code to implement a specific task.
 
-   
+   Combine concepts learnt so far to solve problems
+6-step strategy to solve any given problem
+
