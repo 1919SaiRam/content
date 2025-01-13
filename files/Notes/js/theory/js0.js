@@ -109,6 +109,19 @@ Arrow Functions
 Pass by value 
 Pass by reference 
 
+Global Scope
+Local Scope
+Lexical Scope
+Hoisting
+Callback
+Closure
+
+Advanced array callback functions
+Sorting
+Map, Filter and Reduce
+Advanced array functions
+Splice
+Slice
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 Use combination of these concepts to solve  problems.
@@ -1291,5 +1304,631 @@ Arrow Functions  :-
        var call = a => console.log(a);
         call(8);   // Hello
 
+onvert Function Express to Arrow function
+//Old Way
+const area = function (l, b) {
+  return l * b;
+};
+//Arrow Way 😎
+const area = (l, b) => l * b;.
+
+Pass by Value :- 
+  All the primitive data types are passed by value.
+  Boolean, number, string, null and undefined all are passed by value.
+  Any changes that we make in the passed item with not reflect in the original item.
+
+var a = 10;
+var b = a;
+b = b + 10;
+
+console.log(a);   //10
+console.log(b);   //20
 
 
+function add(num){
+        num = num + 10;
+        console.log(num);  // What will be the output?
+}
+var num = 5;
+add(num);
+console.log(num);   // What will be the output?
+
+Pass by Reference :-
+  All the non primitive data types are passed by reference.
+  Arrays, objects and functions all are passed by reference.
+  Any changes that we make in the passed item will reflect in the original item.
+
+
+  onst obj = {
+     name:  "Jhon"
+}
+function changeName(obj){
+    obj.name = "Doe";
+}
+console.log("Object before function call");
+console.log(obj.name);                     //Jhon
+changeName(obj);
+console.log("Object after function call");
+console.log(obj.name);                     //Doe
+
+
+Storing Reference :-
+  If we initialize one object with  another object, and we are making some changes, those changes will also reflect in the original object as well.
+const obj = {
+     name:  "Jhon"
+}
+
+var copy_obj =  obj;
+console.log(obj.name);    // What will be the output? // Jhon
+
+
+copy_obj.name = "Khaby"
+console.log(copy_obj.name);  // What will be the output? //Khaby
+
+console.log(obj.name);  // What will be the output?    //Khaby
+
+
+Spread Syntax(...) :-
+Spread syntax can be used when all elements from an object or array need to be included in a new array or object.
+If any changes are made in the new object or array  those will not reflect in the original object or array.
+
+  const obj = {
+     name:  "Lame"
+}
+
+var copy_obj =  {...obj};
+
+console.log(obj.name);    // What will be the output?   //Lame
+
+copy_obj.name = "Khaby"
+
+console.log(copy_obj.name);  // What will be the output?    //Khaby
+
+console.log(obj.name);    // What will be the output?         //Lame 
+
+
+------>> #Scope  :- 
+  The scope is the extent to which a variable is accessible while executing the code.
+  Scope basically partitions the visibility of variables throughout the program.
+
+  
+Global Scope :- 
+If we want a variable to be accessible anywhere in the program we define it globally.
+Global scope is the outermost scope in the JavaScript.
+  
+var a = 10; // variable 'a' global scope
+function func(){
+   console.log("a is accessible within the function:", a);
+}
+func();
+console.log("a is accessible outside the function:", a);
+
+
+
+Local Scope :- 
+  If we want a variable to be accessible locally in the program we define it:
+1  .  Within a function (Function scope  - var ) 
+2  .  Within a block (Block scope - let & const)
+
+
+ Function Scope :- 
+function func(){
+   var b = 20;   // scope within the function
+   console.log("b is accessible within the function:", b);  // 10
+}
+func();
+console.log("b is not accessible outside the function:", b );  // error
+
+
+
+What will be the output & why?
+var firstName = "Kevin";
+function display(){
+     var lastName = "Obrain";
+     console.log("FullName: " + firstName + " " + lastName );
+}
+display();
+console.log("FullName: " + firstName + " " + lastName );
+
+
+
+Block Scope :-
+  Block scope is a local scope bounded between two curly brackets {}. 
+The block scope lets you limit the accessibility of all variables declared inside it. 
+Variables declared using  let or const, can’t be accessed outside the curly brackets {}
+var a = 10; // variable 'a' global scope
+if(a===10){
+   let b = 20;   // scope within the block ( will be same for const)
+   console.log("b is accessible within the block:", b);  // 20
+}
+console.log("b is not accessible outside the block:", b );  // error
+
+
+Variables  declared using var, can be accessed outside the curly brackets {}. 
+var a = 10; // variable 'a' global scope
+if(a=== 10) {
+   var b = 20;   // scope is outside the block
+   console.log("b is accessible within the block:", b);  // 20
+}
+console.log("b is accessible outside the block:", b);  // 20
+
+
+
+ ---> Scope of var :- 
+   
+      var a =10;  // global variable
+func ();
+function func() {
+  if(a==10)
+    {
+        var x =10;
+       console.log(x);  //‘x’ can be accessed within the block scope
+    }
+  console.log(x);     //‘x’ can be accessed outside the block scope
+}
+console.log(x)        //‘x’ can’t be accessed outside the function scope
+
+
+1) Re-declaring variable using ‘var’ 
+2) Re-declaring variable using ‘const’ 
+3) Re-declaring variable using ‘let’ 
+
+
+var a = 10;
+var a = 20;
+
+console.log(a);        // 1) Output: 20      ;  2) Error:  Identifier 'a' has already been declared       ;  3) Error:  Identifier 'a' has already been declared
+
+
+if(1){
+  var a = 10;
+  var a = 20;
+}
+console.log(a);        // 1) Output: 20      ; 2) Error:  Identifier 'a' has already been declared        ;  3) Error:  Identifier 'a' has already been declared
+
+
+var a = 10;
+func();
+function func() {
+   var a = 20;
+}
+console.log(a);        //  1)  Output: 10      ; 2) Output: 10                   ; 3) Output: 10  
+ 
+
+Lexical Scope  :-  
+Lexical scope is ability for a inner scope to access variables from the outer scope. 
+That means inner scope is lexically bound to the outer scope. 
+
+
+  
+function parent() {
+  const message = "I am from parent";
+  function child() {
+    console.log(message + " Called from child function ");
+  }
+  child();
+}
+parent();
+
+
+
+
+var x = 10; // global scope
+var outerFunc = function (){ // outermost function
+    var y = 20;
+    console.log(x + " " + y);
+
+      var innerFunc= function (){ // innermost function
+        var z = 30;
+        console.log(x + " " + y + " " + z);
+    }
+    innerFunc();
+}
+outerFunc();
+
+
+Hoisting :- Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
+
+**Variables declared with const and let are not hoisted.
+var a;
+console.log(a);
+a = 10;   //undefined
+
+func ();
+
+
+** Remember “Function Declarations” are hoisted entirely.
+function func() {
+  console.log("hello");
+}              // hello
+
+**  Remember “Function Expressions” are hoisted partially.
+func ();
+var func = function() {
+  console.log("hello");
+}                   //Error: func is not a function
+
+
+** Remember “let and const” are not hoisted.
+func(); 
+let func = function() {
+  console.log("hello");
+}     //Error: Cannot access 'func' before initialization
+
+
+Callback  :-  
+  In JavaScript, a callback is a function passed into another function as an argument to be executed later.
+  Callbacks make sure that a function is not going to run before a task is completed but will run right after the task has been completed.
+  
+function bikeRepair(funcToExecuteLater){
+   console.log("Working on bike");
+   //once the work is done
+   funcToExecuteLater();
+}
+function callOwner(){
+   console.log("Take back bike");
+}
+bikeRepair(callOwner);
+
+
+function sum(n1, n2) {
+console.log(n1 + n2);
+}
+function multiply(n1, n2) {
+console.log(n1 * n2)
+}
+function calculator(num1, num2, operation) {
+console.log(`Calculating on ${num1} and ${num2}`)
+operation(num1, num2);
+}
+calculator(5, 5, sum);
+calculator(5, 5, multiply); // different callback, different answer
+
+
+
+Closures :- 
+  Closure = Function + Lexical Environment
+  If a function is created inside another function, it retains access to the scope of that outer function even after that outer function returns, because the outer function is in the lexical scope of the function.
+
+    function parentFunction() {
+  //Lexical Scope of childFunction() START
+  const message = "Hi! I'm a message from parent";
+  function childFunction() {
+    console.log(message);
+  }
+  return childFunction;
+  //Lexical Scope of childFunction() END
+}
+const ans = parentFunction();
+ans();
+
+
+
+function multiply(storedNum) {
+    return function(num) {
+        return storedNum * num;
+    }
+}
+const multiplyTwo = multiply(2);
+const multiplyThree = multiply(3);
+const multiplyFour = multiply(4);
+console.log(multiplyTwo(5));
+console.log(multiplyThree(6));
+console.log(multiplyFour(7));
+
+
+The scope is the extent to which a variable is accessible while executing the code.
+Global scope is the outermost scope in the JavaScript.
+Block scope is a local scope bounded between two curly brackets {}. 
+Lexical scope is ability for a inner scope to access variables from the outer scope. 
+Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
+A callback is a function passed into another function as an argument to be executed later.
+A closure refers to the lexical scope a function was declared in and the variables it has  access to.
+
+  
+
+  Advanced array callback functions  :- 
+  For...Each
+    forEach is invoked on an array, it iterates or loops through the array.
+    Runs a Callback function on each value in the array.
+    When the loop ends forEach returns undefined.
+Eg:- Without arrow syntax
+      const nums = [1, 2, 3, 4];
+nums.forEach( function iterate(value) {
+    console.log(value);
+});
+
+Eg :- With arrow syntax
+const nums = [1, 2, 3, 4];
+nums.forEach((value) => console.log(value));
+
+-->>  foreach(value)    -  value is the element in the array 
+-->>  foreach(value, index)    -  index is the index of the element in the array 
+
+const nums = [1, 2, 3, 4];
+nums.forEach((value, index) => {
+  console.log("Element " + value + " is at index " + index);
+});
+
+
+
+const data = [
+  { _id: "1", name: "Vivek" },
+  { _id: "2", name: "Neha" },
+  { _id: "3", name: "Satya" },
+  { _id: "4", name: "Amit" },
+];
+for (var itr = 0; itr < data.length; itr++){
+    if(data[itr]._id === "4"){
+       console.log(data[itr]);
+	 break;
+    }
+}
+
+
+
+Find :-  find() method returns the value of the first element in the provided array that satisfies the provided testing function.
+  const data = [
+  { _id: "1", name: "Vivek" },
+  { _id: "2", name: "Neha" },
+  { _id: "3", name: "Satya" },
+  { _id: "4", name: "Amit" },
+];
+const res = data.find((item) => item._id === "1");
+console.log(res); //{ _id: '1', name: 'Vivek' }
+
+
+Introduction to Sorting :- 
+  sort() sorts elements of an array in-place and returns the sorted array.
+The default sort order is ascending.
+
+var arr = ["Xavi", "Zaltan", "Messi", "Aguero"];
+arr.sort();
+console.log(arr);   //[ 'Aguero', 'Messi', 'Xavi', 'Zaltan' ]
+
+sort() tries to convert the array elements to strings first and sorts lexicographically (dictionary order).
+
+  
+nums.sort(function (a, b) {
+if (a < b) return -1; // or any negative value
+else if (a > b) return 1; // or any positive value
+else return 0;
+})
+The comparator functions takes in two arguments to compare (say a and b) 
+If the function returns -ve number then that means to sort a before b
+If the function returns a +ve number that means to sort b before a
+If the function returns 0 then it means to keep the original ordering of a and b
+
+
+
+const nums = [4, 20, 12, 11, 100, 0, 4];
+nums.sort (function (a, b) {
+   if (a < b)
+      return -1;
+ });
+console.log(nums)
+
+=== as same as ===
+const nums = [4, 20, 12, 11, 100, 0, 4];
+nums.sort (function (a, b) {
+    return a - b
+ });
+console.log(nums);
+
+=== as same as ===
+  
+const nums = [4, 20, 12, 11, 100, 0, 4];
+nums.sort ((a, b) => a - b);
+console.log(nums);
+
+Sort an array in descending order using arrow syntax.
+Given an array of objects with different keys sort it using sort() method.
+Print the names of the people in ascending order of their age.
+const array = [
+  {
+    name: "Kevi",
+    age: 25,
+  },
+  {
+    name: "Arnold",
+    age: 6,
+  },
+  {
+    name: "Sheila",
+    age: 56,
+  },
+];
+
+ we are  doubling every number in the array and storing in a new array.
+let newArr = []; // storing doubles
+for (let i = 0; i < arr.length; i++) {
+    newArr[i] = arr[i]* 2;
+}
+console.log(newArr);   // [ 20, 60, 100 ]
+
+
+
+let arr = [ 10, 30, 50 ];
+let newArr = []; // storing doubles
+for (let i = 0; i < arr.length; i++) {
+    newArr[i] = arr[i]* 2;
+}
+console.log(newArr);   // [ 20, 60, 100 ]
+
+
+
+const arr = [10, 30, 50];
+function multiplyByTwo(arr) {
+    const newArr = [];
+    for(let i = 0; i < arr.length; i++) {
+        newArr[i] = arr[i] * 2;
+    }
+    return newArr;
+const arrDoubled = multiplyByTwo(arr);
+console.log(arrDoubled);               // [ 20, 60, 100 ]
+
+
+
+map() method that allows you to transforms the array elements in a cleaner way.
+map() method is used for creating a new array from an existing one, applying a function to each one of the elements of the original array.
+function multiplyElements(arr,mutiplyFn) {
+    const newArr = [];
+    for(let i = 0; i < arr.length; i++) {
+        newArr[i] = mutiplyFn(arr[i]);
+    }
+    return newArr;
+}
+const arr = [10, 30, 50];
+
+function mutiplyFn(item){
+    return item * 2;
+}
+const arrDoubled = multiplyElements(arr,mutiplyFn);
+console.log(arrDoubled);       // [ 20, 60, 100 ]
+
+
+=== as same as ===
+  
+const arr = [10, 30, 50];
+function mutiplyFn(item){
+    return item * 2;
+}
+const arrDoubled = arr.map(mutiplyFn);
+console.log(arrDoubled);       // [ 20, 60, 100 ]
+console.log(arr);    // original array is unchanged
+
+
+
+---> 
+  
+const arr = [10, 30, 50];
+function mutiplyFn(item){
+    return item * 2;
+}
+const arrDoubled = arr.map(mutiplyFn);
+console.log(arrDoubled);       // [ 20, 60, 100 ]
+
+ ==  Anonymous function == 
+
+const arr = [10, 30, 50];
+const arrDoubled = arr.map(function (item){
+    return item * 2;
+});
+console.log(arrDoubled);
+
+== Arrow Syntax ==
+ 
+const arr = [10, 30, 50];
+const arrDoubled = arr.map((item) => item * 2);
+console.log(arrDoubled);
+
+
+Filter :- filter() method takes each element in an array and it applies a conditional statement against it. 
+ If this conditional returns true, the element gets pushed to the output array otherwise it will not be pushed.
+  
+const fruits = ['apple', 'banana', 'grapes', 'kiwi', 'orange'];
+function longerThanFive(str) {
+    return str.length > 5;
+}
+const newArr = fruits.filter(longerThanFive);
+console.log(newArr);    //[ 'banana', 'grapes', 'orange' ]
+
+==== as same as ====
+  const fruits = ['apple', 'banana', 'grapes', 'kiwi', 'orange'];
+const newArr = fruits.filter((str) => str.length > 5);
+console.log(newArr);     // [ 'banana', 'grapes', 'orange' ]
+
+
+Reduce :- The reduce() method reduces an array of values down to just one value!
+The reduce() method does not change the original array.
+
+const newArray = array.reduce(accumulatorFn,initialValue);
+(accumulator, currentValue, index, currentArray) => {
+      //Reducer logic
+  }
+
+accumulator: The accumulator accumulates callback's return values. It means it stores all the values returned by callback. It can be a number, an array or an object(Required Parameter)
+currentValue: Current value is similar to array[i] when we iterate over array using for loops (Required)
+index: Current index of the item (Optional Parameter)
+currentArray: 	We are iterating over, in this case its "array"(Optional)
+initialValue: A value to use as the first argument to the first call of the callback (Optional)
+If initialValue is specified 
+currentValue to be initialized to the first value in the array.
+If initialValue is not specified
+accumulator is initialized to the first value in the array, and currentValue is initialized to the second value in the array.
+
+
+--> Given a array of strings, we need to accumulate these strings as one string 
+const arr = ['Hello', 'there!', 'How', 'are', 'you', 'doing?'];
+function accumulatingString(accumulator, currentValue) {
+    return accumulator + currentValue + ' ';
+}
+const str = arr.reduce(accumulatingString, ‘');  //Initial Value
+console.log(str);   //Hello there! How are you doing?
+
+===Same thing can be written as.===
+  const arr = ['Hello', 'there!', 'How', 'are', 'you', 'doing?'];
+const str = arr.reduce((accumulator, currentValue) => accumulator + currentValue + ' ', '');//Initial Value
+console.log(str);   // Hello there! How are you doing?
+
+
+
+  Splice :- 
+splice() allows us to add and/or remove array elements inplace
+splice() not only modifies the array it's being called on, but it also returns a new array containing the value of the removed elements.
+  
+We are given an index from which we want to delete all the elements in the array
+function deleteElements(months,start){
+     months.splice(start);
+}
+const months = ['Jan', 'March', 'April', 'June'];
+deleteElements(months, 1);
+console.log(months);    // [‘Jan’]
+
+  Splice Variations
+splice(start) - Takes in the start index of the array. Eg. can be used to duplicate an array.
+splice(start, deleteCount) - Deletes the deleteCount number of elements from the start index.
+splice(start, deleteCount, newItem1) -  Adds new element newItem1 right after the delete operation.
+
+  We are given an index from which we want to delete all the elements and also how many elements to delete in the array ?
+function deleteElements(months,start,deleteCount, newItem){
+     months.splice(start, deleteCount, newItem);
+}
+const months = ['Jan', 'March', 'April', 'June'];
+deleteElements(months, 1, 2, 'May');
+console.log(months);    // ['Jan', 'May', 'June']
+
+
+Slice :- 
+  slice(start, end) copies or extracts a given number of elements to a new array, leaving the array it is called upon untouched.
+  The slice() method selects from a given start, up to a (not inclusive) given end.
+  
+const fruit = ["Banana", "Orange", "Lemon", "Mango", "WaterMelon", 'Melon'];
+var arr = fruit.slice(1, 3);
+console.log(arr);
+
+const fruit = ["Banana", "Orange", "Lemon", "Mango", "WaterMelon", 'Melon'];
+var arr = fruit.slice(2,3);
+console.log(arr);
+
+
+forEach() method calls a function for each element in an array.
+find() method returns the value of the first element in the provided array that satisfies the provided testing function.
+sort() method sorts elements of an array in-place lexicographically and returns the sorted array.
+map() method is used for creating a new array from an existing one, applying a function to each one of the elements of the original array.
+filter() method takes each element in an array and it applies a conditional statement against it. 
+reduce() method reduces an array of values down to just one value.
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+  
