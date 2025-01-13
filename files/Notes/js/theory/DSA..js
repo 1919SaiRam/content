@@ -1,5 +1,5 @@
 Approach to problem solving
-For any given problem, following these milestones of Crio Methodology will help you solve the problem systematically.
+For any given problem, following these milestones  will help you solve the problem systematically.
   
 Milestone 1: Understand the problem clearly
 1. Ask questions & clarify the problem statement clearly.
@@ -120,7 +120,6 @@ Co-prime
 Base conversion
 Debugging 
 What? How?
-
 
 ------------------------=================--------------------================-------------------------------------------------------
 DSA :-
@@ -990,3 +989,8 @@ Debugging and coding goes hand-in-hand with Software Development
 Treat issues/errors as learning opportunity
 Build confidence yourselves trying to debug and figuring out things by yourselves, incrementally
 In the later Sprints, the errors you come across will need more skill to be debugged
+
+
+
+
+
