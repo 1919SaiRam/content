@@ -8,3 +8,18 @@ Stepping: Monitor the effect of each line of code by executing a single line at 
 Error message list: Display errors, warnings, and messages generated during compilation and execution 
 Autocomplete: Anticipate what the programmer is going to type next 
 IDEs can help programmers focus on logic in their code instead of learning about and manually integrating different software tools.  
+
+
+  Alphabet 
+a set of symbols used to build words of a certain language. Eg. The latin alphabet for English, Devanagari for Hindi, Kanji for Japanese, etc.
+
+  Dictionary 
+ a set of words that a language offers its users. Eg. The word “chat” is there in both English & French dictionary but having different meanings.
+
+   Syntax
+a set of rules used to determine if a certain string of words forms a valid sentence. “I am a Language” a syntactically correct while “I a Language am” isn’t.
+
+  Semantics
+ a set of rules determining if a certain phrase makes sense. Eg. “I ate a Burger” makes sense but “A burger ate me “ doesn’t.
+
+   
