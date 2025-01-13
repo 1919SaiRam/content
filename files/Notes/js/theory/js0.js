@@ -68,5 +68,26 @@ For example, when you select Dark Mode or Light Mode on browser, the browser rem
 
 Variables to store and access data when a program is executing. 
 
+The variable needs to be declared.
+The variable declaration tells the operating system to reserve a piece of memory with that variable name.
+After you declare a variable, you would want to store a value in the memory reserved by it. Assigning a value after the variable is declared, at some point in your program, is called an assignment.
 
-  
+  Declaring a JavaScript Variable
+Creating a variable in JavaScript is called "declaring" a variable.
+
+You declare a JavaScript variable with the var or the let keyword:
+
+var carName;
+or:
+let carName;
+After the declaration, the variable has no value (technically it is undefined).
+
+To assign a value to the variable, use the equal sign:
+
+carName = "Volvo";
+You can also assign a value to the variable when you declare it:
+
+let carName = "Volvo";
+
+
+
