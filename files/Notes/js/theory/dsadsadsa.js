@@ -1247,3 +1247,132 @@ Important Observation: When you enter the while loop, a complete level is always
   Activity 2 -  Right View of a Binary Tree
 
 
+
+Binary Tree 
+Top View / Bottom View
+Find the LCA in a given binary tree
+Construct a binary tree from preorder and inorder traversal of a Binary tree
+
+Vertical order traversal
+CONCEPT
+Visualize a tree into different vertical levels as shown in the image.
+Start from the root and mark its horizontal distance (hd) as 0. 
+While going to the left, decrement the horizontal distance by 1, where as increment the horizontal distance by 1 while going to right
+hd[left_children] = hd[parent] - 1;
+hd[right_children] = hd[parent] + 1;
+The nodes with the same value of horizontal distance (hd), belong to the same vertical order in a binary tree. 
+Use Map data structure to store results, with hd as the key and list of nodes as its value.
+
+
+  Activity 1 -  Top View of a Binary Tree
+
+Activity 2 -  Find LCA in a binary Tree
+LCA in a binary tree
+The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants
+LCA of 4 and 5 is  2
+LCA of 4 and 14 is  1
+LCA of 13 and 7 is  3
+
+
+Activity 3 -  Construct binary tree from preorder and inorder
+Boundary traversal of a binary Tree
+
+
+Binary Search Trees 
+Concept Introduction
+Find a key in a given BST
+Validate Binary Search Tree
+Normal BST to Balanced BST
+Kth Smallest Element in a BST
+
+Introduction to Binary Search Trees
+Binary Search Trees are a form of Binary Trees where
+The Left Child has a value lesser than or equal to the Parent Node
+The Right Child has a value greater than the Parent Node
+All BSTs are Binary Trees but not all Binary Trees are BSTs
+The advantage with BST is that we can systematically search the tree for values in O(log N) time on average, whereas a Binary Tree does not have organized data and our search would take O(N) time.
+
+  Balanced BST
+The key requirement for a BST to be effective is that the tree has to be Balanced so the search can happen in O(log N) time, otherwise in the worst case, it can deteriorate to O(n)
+Being Balanced keeps the tree height to the minimum possible.
+
+How do we keep a BST balanced, every time we insert a new value or remove a value?
+Using Left Rotation or Right Rotation
+Self Balancing BSTs include AVL trees, Red Black Trees etc.
+
+  Comparison and Advantages
+Advantages of BSTs
+Fast insertion and deletion when balanced. O(h) lookup time where h is the height of the tree. Very useful when the number of nodes are large.
+Lot of applications - Self balancing BSTs are used to store ordered lists (e.g. Priority Queues), optimize DB queries ..
+Disadvantages of BSTs
+If not balanced, it can degenerate quickly. Search will be slower.
+Takes time to balance every time an insert or delete takes place, but this is acceptable.
+
+  Other information
+In-order traversal on a binary search tree will visit the nodes in ascending order i.e. in order                                                      
+    
+[1,2,3,4,5,6,7]	
+
+BST can used to search the Kth smallest or Kth largest element easily since it is sorted when visited In-order
+BST can also be used to find ranges between 2 given values.
+
+
+Frequently asked problems
+Range Sum of BST
+Recursive insert in a Binary Search Tree
+Implement a method to convert a binary search tree into a doubly linked list
+Flatten binary tree to a Linked List
+Find kth smallest element in a binary tree
+Find the next greater number in a BST
+BST sequences - all input arrays that can lead to this BST 
+Implement Binary Search Tree iterator
+Check if a BST is a valid BST
+Find the 2nd largest element in a BST
+
+Activity 1 -  Find an element with a given key in a BST (Approach only)
+Activity 2 -  Validate a given BST
+Activity 3 -  Convert a normal BST into balanced BST
+
+Sub Problem
+Given a sorted (increasing order) array with unique integer elements, write an algorithm to create a binary search tree with minimal height. Return the head of this minimal tree and the driver will output the height of the tree.
+Note: In cases where the tree is not a valid BST, the output should be -1.
+
+Example 1
+Input:      [1 2 3 4 5 6 7]
+
+Output:   3
+
+Explanation:                                                        We can create a binary search tree with root 4 
+                                                                         having a minimum possible height of 3
+
+Approach
+The In-Order traversal of a BST gives us a Sorted Array in ascending order. So this is effectively creating a BST from its in-order traversal.
+The input is a sorted array and the requirement is that we want to keep the Tree as balanced as possible (Meaning the height of left subtree and right subtree at any node differs by at most 1 level. This applies to the sub trees as well.)
+Intuitively, if we pick the middle value of the array as the root node, then the left sub-array can form the left sub-tree and the right sub-array can form the right sub-tree. The left and right sub-trees will have almost equal elements.
+If we do this recursively by dividing each half into further halves and split this into the left and right sub-trees, we have a solution. (This reminds me of binary search. Oh wait! It is binary search).
+ [1 2 3 4 5 6 7]
+
+Solution
+public TreeNode findMinimalTree(int treeArray[]) {
+    return makeBstFromArray(0, treeArray.length-1 , treeArray);
+}
+
+public TreeNode makeBstFromArray(int low, int high, int treeArray[]) {
+    if(low > high) {
+        return null;
+    }
+    int mid = (low + high)/2;
+    TreeNode midNode = new TreeNode(treeArray[mid]);
+    midNode.left = makeBstFromArray(low, mid-1, treeArray);
+    midNode.right = makeBstFromArray(mid+1, high, treeArray);
+    return midNode;
+}
+
+Time Complexity: O(N), since we visit each node once
+Space Complexity: O(log N), for the recursive stack. We also have O(N) to store the tree nodes if we want to consider the output data structure as well.
+
+  
+Activity 4 -  Find the Kth smallest element in a BST
+Find LCA in a BST
+Find Inorder Successor
+Tree Mock
