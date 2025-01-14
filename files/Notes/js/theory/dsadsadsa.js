@@ -1067,3 +1067,183 @@ Non recursive version of Merge Sort which would ensure Space Complexity of O(1)
 Bottom up approach - Take the input list and treat it as a collection of small sorted lists. It makes log N passes along the list, and in each pass it combines each adjacent pair of small sorted lists into one larger sorted list. When a pass only needs to do this once, the whole output list must be sorted.
 
 
+Trees 
+Traversals (Recap)
+Diameter of a Binary tree
+Views of a binary tree
+Left View / Right View
+
+Introduction to Trees
+Trees are a form of linked lists with pointers from parent node to each of its child nodes
+Nodes can carry integer, string or any other data type as with linked lists
+The Tree has a recursive structure 
+Every tree starts at a Root node
+The root node has zero or more child nodes
+The child nodes themselves have zero or more child nodes and so on
+There is no cycle in a Tree
+The nodes with zero children are called Leaf nodes
+Note: The child nodes could have a links back to their parent node. But this is usually not the case with problems.
+
+ Binary Tree
+Binary Tree is a form of tree where each parent node has a maximum of 2 child nodes
+These child nodes are usually called the Left Child and the Right Child.
+The Binary Tree could be a Balanced or an Unbalanced Binary Tree
+A balanced binary tree means that each leaf node is almost the same distance away from root node i.e. they are reasonably bunched together and not very imbalanced. All leaf nodes need not be the exact same distance away from root node. This ensures insert and find operations can work at O(log n). Generally, leaf nodes may have 1 level of difference in depth between them when measured from the root node.
+A binary tree is height balanced if the difference in heights of the left and right subtrees is not more than 1 and each of the left and right subtrees are themselves balanced.
+
+  Binary Tree - Applications
+Used to implement BST where lookup is much faster
+Binary heaps where higher keys are above or equal to lower ones rather than to the left of (or below or equal to and right)
+Hash trees, similar to hash tables
+Abstract syntax trees for compilation of computer languages
+Huffman trees for compression of data
+Routing trees for network traffic
+
+
+Binary Tree - Node
+What would the Node Structure look like for a Binary Tree Data Structure?
+public class TreeNode {
+  public long val;
+  public TreeNode left;
+  public TreeNode right;
+
+  public TreeNode (long x) {
+      val = x;
+      left = null;
+      right = null;
+  }
+}
+
+
+Binary Tree traversals
+In-order traversal - we visit the left branch, then current node followed by right branch  (Left->Root->Right)
+Pre-order traversal - we visit the current node first, followed by left branch and then right branch. Root is first node to be visited (Root->Left->Right)
+Post-order traversal - we visit the left branch followed by right branch and then the current node. Root the last node to be visited (Left->Right->Root)
+These can be done using a stack instead of recursion.
+
+
+void inOrderTreeTraversal(Node) {
+    if (Node != null) {
+        inOrderTreeTraversal(Node.left);
+        visit_node(Node);
+        inOrderTreeTraversal(Node.right);
+    }
+}
+void preOrderTreeTraversal(Node) {
+    if (Node != null) {
+        visit_node(Node);
+        preOrderTreeTraversal(Node.left);        
+        preOrderTreeTraversal(Node.right);
+    }
+}
+void postOrderTreeTraversal(Node) {
+    if (Node != null) {
+        postOrderTreeTraversal(Node.left);        
+        postOrderTreeTraversal(Node.right);
+        visit_node(Node);        
+    }
+}
+
+
+In-Order      -> 4 2 5 1 6 3 7
+Pre-Order   -> 1 2 4 5 3 6 7 
+Post-Order -> 4 5 2 6 7 3 1
+
+
+Binary Tree Searches
+Breadth First Search (BFS)
+The goal is to visit nodes one level at the time starting from a source node
+BFS is Level Order traversal
+BFS uses Queue
+Depth First Search (DFS)
+In-order, pre-order and post-order traversals involve DFS (already covered)
+DFS uses Stack (directly or by using recursion)
+
+void breadthFirstSearch(Node root) {
+    List<Node> queue = new LinkedList<>();
+    queue.add(root);
+    while (!queue.isEmpty()) {
+        Node node = queue.remove(0);
+        visit_node(node);
+        if (node.left != null)
+            queue.add(node.left);
+        if (node.right != null)
+            queue.add(node.right);
+    }
+}
+
+Level-Order  -> 1 2 3 4 5 6 7
+
+
+Binary Tree - CRUD operations
+Insert
+Search
+Update
+Delete
+
+
+Frequently asked problems
+First/Least common ancestor of 2 nodes
+Determine if one binary Tree is a subtree of the other
+Given inorder and postorder traversal of a tree, construct the binary tree
+Given inorder and preorder traversal of a tree, construct the binary tree
+Check if a tree is a Symmetric Binary Tree
+Find Longest Univalue path in Binary Tree
+Find All possible Full Binary Trees
+Find Max/Min element in Binary Tree
+Find Minimum distance between Nodes in Binary Tree
+Merge 2 Binary Trees
+Invert a Binary Tree
+Find all paths in a binary tree
+Check if a Binary Tree is balanced 
+In order traversal
+Pre order traversal
+Post order traversal
+Binary Tree Level Order Traversal
+Reverse Level Order Traversal
+Zigzag traversal
+Calculate average at each level of a Binary Tree
+Find minimum/maximum depth of a binary tree
+Find the shortest path from the root node to a leaf node
+Find level order successor of a given node
+Connect level order siblings
+Connect each node with its level order successor
+Right view of a binary tree (nodes visible when viewed from right)
+Left view of a binary tree (nodes visible when viewed from left)
+Binary tree path sum equal to a given target
+Find all paths in a binary tree that add to a given sum
+Sum of path numbers
+Find if a path with given sequence exists in a binary tree
+Count number of paths that have a particular sum (Paths need not be from root to leaf)
+Find length of Diameter of a Binary Tree (The diameter of a tree is the number of nodes on the longest path between any two leaf nodes)
+Path with Maximum Sum (Hard)
+
+
+Activity 1 -  Diameter of a  binary tree
+
+Binary Tree - Views
+Left View 
+It will always be the first node of each level of a binary tree (in order). 
+Use Level  Order Traversal to solve this
+Right View 
+It will always be the last node of each level of a binary tree (in order). 
+Use Level Order Traversal to solve this
+Top View 
+It will always be the first node of each vertical  level of a binary tree (in order). 
+Use Vertical Order Traversal to solve this
+Bottom View
+It will always be the last node of each vertical  level of a binary tree (in order). 
+Use Vertical Order Traversal to solve this
+
+
+Level order traversal
+CONCEPT
+Visualize a tree into different horizontal levels as shown in the image.
+Use a queue data structure to mark and store different levels of a tree. 
+Push the root into the queue. 
+While the queue is not empty, pop the node and add its children back to the queue. 
+Important Observation: When you enter the while loop, a complete level is always present in a loop. Use another for loop to process all nodes of the same level together. We can also push markers (say -1) into the queue, to mark different levels of a tree. 
+
+  Activity 2 -  Right View of a Binary Tree
+
+
