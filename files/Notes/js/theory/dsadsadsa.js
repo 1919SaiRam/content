@@ -603,8 +603,7 @@ Takes more memory than array per node
 since the pointer also needs to be stored
 
 
-Singly Linked List
-Doubly Linked List
+
 
                                             Operation                                      Array          Singly Linked List     Doubly Linked List                          Stack                 Queue             Hash
 
@@ -1376,3 +1375,23 @@ Activity 4 -  Find the Kth smallest element in a BST
 Find LCA in a BST
 Find Inorder Successor
 Tree Mock
+
+
+
+                                            Operation                                      Array          Singly Linked List     Doubly Linked List                          Stack                 Queue             Hash               Binary Search Tree
+
+
+Average Case                                 Insert                                         O(n)            O(1)                       O(1)                                   O(1)                 O(1)              O(1)                   O(logn)
+                                             Access                                         O(1)            O(n)                       O(n)                                   O(n)                 O(n)               NA                    O(logn)
+                                             Search/Update                                  O(n)            O(n)                       O(n)                                   O(n)                 O(n)              O(1)                   O(logn)
+                                             Delete                                         O(n)            O(1)                       O(1)                                   O(1)                 O(1)              O(1)                   O(logn)
+
+
+Worst Case                                  Insert                                          O(n)            O(1)                       O(1)                                   O(1)                 O(1)              O(n)                    O(n)
+                                            Access                                          O(1)            O(n)                       O(n)                                   O(n)                 O(n)               NA                     O(n)
+                                            Search/Update                                   O(n)            O(n)                       O(n)                                   O(n)                 O(n)              O(n)                    O(n)
+                                            Delete                                          O(n)            O(1)                       O(1)                                   O(1)                 O(1)              O(n)                    O(n)
+
+
+                                                                                              
+Space Complexity                                                                            O(n)            O(n)                        O(n)                                   O(n)                  O(n)              O(n)                  O(n)
