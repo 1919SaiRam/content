@@ -347,3 +347,225 @@ console.log(queue.printQueue());
 
 Activity 2 - Implement a queue using two stacks
 Activity 3 - Next Larger Element
+
+
+Stack and Queue Problems 
+Longest Valid Parentheses
+Binary Tree Zigzag Level Order Traversal
+Hashing
+Quick Recap (DSA-1)
+HashMaps/Hashsets
+Hashing Problems
+Count Distinct Elements
+
+Activity 1 -  Find the length of longest valid parentheses
+Activity 2 - Binary Tree ZigZag Level order traversal
+
+Hash - Recap
+A Hash Table is a data structure that maps keys to values such that the lookup of value based on keys is very quick
+An input key is converted to an integer and fed to a hashing function to generate a Hash value. This Hash value puts the key in a particular Hash Bucket in the Hash Table.
+We can visualize the Hash Table as an array of linked lists. Each Index in the array is a bucket and if there are multiple Keys that map to the same bucket, the Key and Value pairs are stored in a linked list at that Array index.
+Example of a hashing function is the modulo operator.
+Modulo 8 is the hashing function
+For input key 5, the hash value is 5 (5 % 8)
+For input key 8, the hash value is 0 (8 % 8)
+For input key 13, the hash value is 5 (13 % 8)
+
+Comparison and Advantages
+Advantages of Hash Tables
+Insertion, Search and Deletion take O(1) time
+One of the better data structures to store large amounts of data which supports operations in quick time
+Disadvantages of Hash Tables
+Hashing can be inefficient when there are too many collisions (the data might not be equally spread across all buckets leading to slower search time). Collision resolution is needed.
+Sorting and range queries are not natural with Hash tables.
+
+
+                                            Operation                                      Array                                  Stack                 Queue             Hash
+
+
+Average Case                                 Insert                                         O(n)                                   O(1)                 O(1)              O(1)
+                                             Access                                         O(1)                                   O(n)                 O(n)               NA
+                                             Search/Update                                  O(n)                                   O(n)                 O(n)              O(1)
+                                             Delete                                         O(n)                                   O(1)                 O(1)              O(1)
+
+
+Worst Case                                  Insert                                          O(n)                                   O(1)                 O(1)              O(n)
+                                            Access                                          O(1)                                   O(n)                 O(n)               NA
+                                            Search/Update                                   O(n)                                   O(n)                 O(n)              O(n)
+                                            Delete                                          O(n)                                   O(1)                 O(1)              O(n)
+
+
+                                                                                              
+Space Complexity                                                                            O(n)                                  O(n)                  O(n)              O(n)
+
+
+
+
+Details
+HashSet vs HashMap
+HashSet is used to maintain a set of unique keys. 
+Application - to check if a character/number has been seen before, by adding them to the set
+HashMap is used to store the mapping of keys to their values
+Application - store frequency(value) of occurrence of a particular character or number (key)
+
+Collision resolution
+In some case, two items will give the same hash value. In such cases, we should have a way to put these two items in the hash table.  This is known as Collision Resolution. 
+If the hashing function (the function that generates the hash value for an input item) is perfect, we won’t see collisions. But this may not be the case.
+
+  
+Collections/STL for Map
+
+C++ (unordered_map)
+unordered_map<string, int> umap;
+map<int, int> gquiz1;
+umap["CRIO"] = 10;
+umap["Students"] = 20;
+umap["Mentors"] = 30;
+gquiz1.insert(pair<int, int>(1, 40));
+gquiz1.insert(pair<int, int>(2, 30));
+for (itr = gquiz1.begin(); itr != gquiz1.end(); ++itr) {
+  cout << '\t' << itr->first<< '\t' << itr->second << '\n';
+}
+for (auto x : umap)
+    cout << x.first << " " << x.second << endl;
+
+Java (HashMap)
+Map<Integer, String> mapHttpErrors = new HashMap<>();
+mapHttpErrors.put(200, "OK");
+mapHttpErrors.put(303, "See Other");
+mapHttpErrors.put(404, "Not Found");
+mapHttpErrors.put(500, "Internal Server Error");
+System.out.println(mapHttpErrors);
+Map<String, String> mapContacts = new LinkedHashMap<>();
+mapContacts.put("0169238175", "Tom");
+mapContacts.put("0904891321", "Peter");
+mapContacts.put("0945678912", "Mary");
+mapContacts.put("0981127421", "John");
+System.out.println(mapContacts);
+
+C++ (unordered_set)
+unordered_set <string> stringSet ;
+stringSet.insert("code") ;
+stringSet.insert("with") ;
+stringSet.insert("crio") ;
+string key = "crio" ;
+if (stringSet.find(key) == stringSet.end())
+    cout << key << " not found" << endl << endl ;
+else
+    cout << "Found " << key << endl << endl ;
+
+unordered_set<string> :: iterator itr;
+for (itr = stringSet.begin(); itr != stringSet.end(); itr++)
+    cout << (*itr) << endl;
+
+Java (HashSet)
+HashSet<String> set=new HashSet();
+set.add("code");
+set.add("with");
+set.add("crio");
+set.add("teachers");
+set.add("mentors");
+Iterator<String> i=set.iterator();
+while(i.hasNext())
+{
+    System.out.println(i.next());
+}
+
+
+Python
+# Creating an empty Dictionary
+Dict = {}
+print("Empty Dictionary: ")
+print(Dict)
+# Creating a Dictionary
+# with dict() method
+Dict = dict({1: 'Crio', 2: 'Teachers', 3:'Mentors'})
+print("\nDictionary with the use of dict(): ")
+print(Dict)
+# Creating a Dictionary
+# with each item as a Pair
+Dict = dict([(1, 'CRIO'), (2, 'Teachers')])
+print("\nDictionary with each item as a pair: ")
+print(Dict)
+
+
+Javascript
+const CRIO = {};
+CRIO.teachers=50;
+CRIO.mentors=30;
+CRIO.HR=10;
+if(CRIO.teachers)
+console.log(CRIO.teachers);
+if(CRIO.mentors)
+console.log(CRIO.mentors);
+if(CRIO.HR)
+console.log(CRIO.HR);
+
+Activity 3 - Count Distinct Elements
+Design a stack that finds the minimum value in O(1) time (Min Stack)
+First Unique Integer 
+
+
+Hashing
+Hashing Problems
+Find all Anagrams in a string 
+Longest Palindrome 
+K Most Frequent Words
+
+Hash
+Applications
+Hash Functions are used in various algorithms to make their computing faster
+Associative arrays: Hash tables are commonly used to implement many types of in-memory tables. They are used to implement associative arrays (arrays whose indices are arbitrary strings or other complicated objects).
+Database indexing: Hash tables may also be used as disk-based data structures and database indices (such as in dbm). Databases may use hash to support quick lookups
+Caches: Hash tables can be used to implement caches i.e. auxiliary data tables that are used to speed up the access to data, which is primarily stored in slower media.
+Object representation: Several dynamic languages, such as Perl, Python, JavaScript, and Ruby use hash tables to implement objects.
+Tiny URL creation - A shortened URL which can be resolved uniquely to a larger URL.
+Cryptography and checksums
+Speeding up data lookup e.g. Dictionaries
+
+
+Hash - Frequently asked problems
+How to identify Hash problems?
+If you need to keep track of count of a particular element (Hash Map) or track occurrence of elements (Hash Set), you should consider Hash.
+Many problems involving two for loops O(n*n) can be done in O(n) , if we find a way to maintain a map/array and make use of it. 
+Frequently asked problems
+Count the frequency of occurrence of letters or numbers or words
+Find most/least frequently occurring word/letter/number/temperature etc.
+Find a pair of numbers that add up to zero or a particular sum
+Find two Numbers that add up to given sum
+Find a subarray with a sum of 0 (or k)
+Encode and Decode Tiny URL
+Find first unique integer in an array
+Find the largest continuous sequence with zero sum
+Find the longest substring without repeating characters
+Find the single non repeating number in an array
+Find if 2 arrays are disjoint
+Find if an array contains a duplicate
+Find the first unique character in  string
+Given an array of strings, group anagrams together
+Check if one string is an anagram of the other
+
+
+Activity 1 - Find All Anagrams in a given string
+Activity 2 - Find the Longest Palindrome
+Activity 3 - K most frequent words
+
+Example problems
+iven an input array of numbers, find two numbers that add up to X
+Initialize an empty hash set (H)
+For each number in the array → Arr[i]
+If H contains X - Arr[i], then the result is Arr[i] and X - Arr[i]
+Else insert Arr[i] into H
+
+Given an input string where all characters appear twice except one character, find that character
+Initialize an empty hash set (H)
+For each character in the input string → Str[i]
+If H contains Str[i], remove it from H
+Else insert Str[i] into H
+The character that remains in H is the character that occurs only once 
+Similarly, we could use a hash map to store the frequency of occurrence of each character as value with Str[i] is key
+
+In general, using a Hash Table is a good way to reduce a brute force approach.
+If you want to quickly lookup data that is unsorted, Hash Table should be considered.
+
+
