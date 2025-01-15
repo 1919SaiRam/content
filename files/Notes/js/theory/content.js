@@ -30,3 +30,25 @@ We need a reference to this memory location to access the value
 This memory reference is called variable
 When we create a variable, memory is reserved for this variable
 Variable acts as a memory container that can store a value
+
+
+What is the Event Driven Programming Paradigm ?
+Last Updated : 02 Feb, 2024
+Event-driven programming is a paradigm where the execution of a program is determined by events such as user actions or messages. Programs respond to events with predefined actions, allowing for asynchronous and responsive behavior, often seen in GUI applications and distributed systems.
+
+Advantages of Event-Driven Programming Paradigm
+Enables asynchronous processing, optimizing resource utilization and responsiveness, crucial for real-time applications and user interfaces.
+Encourages modular code design, simplifying maintenance and scalability by separating concerns and promoting code reusability.
+Enhances user experience by responding promptly to user inputs, delivering a smoother and more interactive interface.
+Facilitates easier integration of new features or modifications, promoting adaptability to changing requirements in dynamic environments.
+Components communicate through events, reducing dependencies and enhancing system flexibility, making it easier to maintain and modify.
+  
+Disadvantages of Event-Driven Programming Paradigm
+Event-driven systems can be challenging to debug due to their asynchronous nature, making it harder to trace errors.
+Concurrent events may introduce race conditions, leading to unpredictable behavior and making debugging and synchronization complex.
+Event-driven systems may lead to inversion of control, making code harder to follow and understand for developers unfamiliar with the design.
+A series of interconnected events can lead to cascading effects, making it harder to predict the outcome and manage the system state.
+Continuous listening for events can consume system resources, leading to potential inefficiencies in resource utilization and impacting overall system performance.
+
+  Event-Driven Architecture (EDA)
+Event-driven architecture (EDA) responds to actions like button clicks. In this paradigm, events, such as "buttonClick," trigger predefined actions. The user interacts with the interface, and the system, following the Event-Driven Programming model, responds dynamically to ensure a responsive and engaging user experience.
