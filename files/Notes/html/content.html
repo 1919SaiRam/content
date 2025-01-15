@@ -1,1 +1,163 @@
-// document
+How the web works?
+Introduction to web development
+Introduction to HTML
+Building Pages with plain HTML
+Adding styling to pages with CSS
+Box model, Flexbox, and Grid
+Responsive web pages
+Building a static website
+
+Introduction to HTML
+HTML Elements & Tags
+Heading and Paragraphs
+Lists
+HTML Attributes
+
+
+How the web works? 
+You type a URL in your browser.
+Browser sends a message to a server.
+Server understands the message.
+Server sends a message back to your browser.
+Browser reads the message
+If there is any other information needs, it agains asks the server for it
+This process is repeated several times till the browser has complete info.
+Browser renders a web page on screen
+
+Intro to web development
+Two broad divisions - Client-side and Server-side 
+Client = Your browser
+Server = Other computer where the resources live.
+Front-End = Whatever displayed on the screen!
+HTML (Hypertext Markup Language) - The Structure
+CSS (Cascading Style Sheets) - the styling
+JS (JavaScript) - the functionality
+
+
+Full-stack Dev Overview
+Creating a front-end website for 
+end-users.
+Creating a database to store the data 
+for the frontend.
+Creating an application to connect 
+front-end to database.
+Deploying the website/web-app 
+to cloud servers.
+
+
+What is HTML?
+Stands for HyperText Markup Language
+Standard markup language for creating web pages
+Responsible for structure of website/webpage
+Made up of elements -> which tell the browser what and how to display
+Contains all information like
+Structure (Elements)
+Content
+Styles
+Fonts etc...
+
+
+
+Let’s understand one use case
+We need to display some content on our webpage.
+But the question is how can we mark up the content for user agents  (explain our content to browsers, screen readers etc) so they can deliver a better experience to the users  ?
+
+
+HTML Elements & Tags
+Everything in HTML is made up of elements
+Element = Start tag (<tag>) + Content (text) + End Tag (</tag>)
+Tag: Tells browser the type of the content in the element - image, input, button, text?
+Start Tags: <tagName>, End Tags: </tagName>
+There are a bunch of tags in HTML - some mandatory, some optional.
+
+
+Structure of a page
+Code
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+		
+    </body>
+</html>
+
+The <html>, <head>, and <body> are known as Tags
+
+Best practice - Start your HTML files with a DOCTYPE declaration to tell the browser which kind of document to expect.
+
+  
+<html>, <head>, & <body>
+Every HTML page will (generally) have the html, head, and body tag.
+<html> tag encloses all the page content
+Hence it is also called the root element.
+<head> tag defines the metadata (data about data *) of the page
+Like title (which is displayed on browser tab) using the <title> tag
+Meta tag which can be used to defined author and keywords for the page
+Fonts for the page
+Styles etc.
+<body> tag contains the content which is displayed inside the browser window as a page.
+
+
+
+  Code Demo - <h1> to <h6> 
+Headings help in emphasizing a section of text on a page
+Sections can be separated by emphasis using different heading sizes.
+Largest heading => most important section
+Smallest heading => least important section
+HTML Headings are created with h tags
+H1 (<h1>) -> Largest most important heading
+H6 (<h6>) -> Smallest, least important heading
+
+  Code Demo - <p> & <br/>
+Most HTML pages have blocks of text a.k.a. paragraphs.
+To add paragraphs of text to our page, we use <p> tags
+Browsers add some (vertical) whitespace before and after the paragraph block
+<p>This is a paragraph.</p>
+<p>Another lengthy paragraph can be here</p>
+
+A paragraph starts on a new line by default.
+If you want to start text from new line, BUT not change the paragraph, we use a <br/> or break tag.
+<p>Another lengthy paragraph can be here.<br/>
+    This will be in the same paragraph but new line</p>
+
+  HTML Lists 
+Often we need to provide a list on a page - for content or links
+Two types of list
+Unordered or Bulleted Lists created by <ul>
+Ordered or Numbered Lists created by <ol>
+Each item under the list must be enclosed in its own <li> tag to denote it as a list item.
+
+  HTML Attributes
+Attributes provides additional information about elements
+Always specified in the start tag
+Attributes usually come in name/value pairs like: name="value"
+
+
+  
+  Web development - includes client-side and server-side development
+Frontend development (client-side)	
+HTML - Structure
+CSS - Style
+JS - Functionality
+Browser (client) communicates with the server on your behalf
+HTTP is the language of communication
+Browser sends a request each for any extra information/resource it needs
+HTML defines the content of  your webpage eg: images, buttons, links
+Basic HTML structure
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+
+    </body>
+</html>
+The <!DOCTYPE html> tag lets the browser know it’s HTML5 format
+<h1>, <h2>, …, <h6> tags are used for headings with decreasing font-size
+<p> tag is for paragraph content and  <br> for adding a line break
+Lists can be added using ul, ol tags with each item under li tag
+Each HTML tag can have multiple attributes.
+
+
+
+  
