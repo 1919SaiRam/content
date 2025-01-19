@@ -35,7 +35,8 @@ Variable acts as a memory container that can store a value
 
 What is the Event Driven Programming Paradigm ?
 Last Updated : 02 Feb, 2024
-Event-driven programming is a paradigm where the execution of a program is determined by events such as user actions or messages. Programs respond to events with predefined actions, allowing for asynchronous and responsive behavior, often seen in GUI applications and distributed systems.
+Event-driven programming is a paradigm where the execution of a program is determined by events such as user actions or messages.
+  Programs respond to events with predefined actions, allowing for asynchronous and responsive behavior, often seen in GUI applications and distributed systems.
 
 Advantages of Event-Driven Programming Paradigm
 Enables asynchronous processing, optimizing resource utilization and responsiveness, crucial for real-time applications and user interfaces.
@@ -52,4 +53,31 @@ A series of interconnected events can lead to cascading effects, making it harde
 Continuous listening for events can consume system resources, leading to potential inefficiencies in resource utilization and impacting overall system performance.
 
   Event-Driven Architecture (EDA)
-Event-driven architecture (EDA) responds to actions like button clicks. In this paradigm, events, such as "buttonClick," trigger predefined actions. The user interacts with the interface, and the system, following the Event-Driven Programming model, responds dynamically to ensure a responsive and engaging user experience.
+Event-driven architecture (EDA) responds to actions like button clicks. In this paradigm, events, such as "buttonClick," trigger predefined actions.
+  The user interacts with the interface, and the system, following the Event-Driven Programming model, responds dynamically to ensure 
+         a responsive and engaging user experience.
+
+
+
+
+Search engine optimization (SEO) is the process of improving a website's ranking in search engines. SEO roles and responsibilities include: 
+Keyword research
+Finding keywords and phrases that people use to search for products or services 
+On-page optimization
+Improving a website's search engine ranking by using the right meta tags, header tags, and URL structures 
+Off-page optimization
+Increasing a website's visibility and authority by building and managing backlinks from reputable sources 
+Technical SEO
+Ensuring a website is technically sound by making sure it has good site speed, mobile compatibility, and structured data 
+Content strategy
+Working with content teams to develop SEO-friendly content that addresses the audience's needs 
+Monitoring site performance
+Tracking conversion rates, organic traffic numbers, and the average time people spend on a page 
+Analyzing data
+Using analytical skills and tools to analyze data from various sources 
+Collaborating with cross-functional teams
+Working with other teams to improve search engine rankings and user experience 
+Search Engine Optimization (SEO) Specialist Job Description
+The goal of SEO is to increase a website's visibility and improve its ranking in search engines, which can lead to more traffic to the site. 
+
+           
