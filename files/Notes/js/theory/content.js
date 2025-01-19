@@ -1,4 +1,5 @@
-An integrated development environment (IDE) is a software application that helps programmers write, compile, and debug code more efficiently. IDEs are designed to support specific programming languages or related languages. 
+An integrated development environment (IDE) is a software application that helps programmers write, compile, and debug code more efficiently. 
+  IDEs are designed to support specific programming languages or related languages. 
 Here are some features of IDEs:
 Editors: Provide tools for writing and editing code, such as automatic line numbering, color coding, auto-correct, auto-suggestion, and auto-indent 
 Build automation: Automate tasks like compiling source code into binary code, packaging binary code, and running automated tests 
