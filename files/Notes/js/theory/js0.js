@@ -145,8 +145,12 @@ Programming errors are also known as the bugs. The process of finding & fixing t
   The language of 0s and 1s, which is called Binary Language 
 
 Compiler
-The language processor that reads the program written in high-level language and translates it into an equivalent program in machine language is called a Compiler.  
+The language processor that reads the program written in high-level language and translates it into an equivalent program in machine language is called a Compiler. 
 
+  Interpreter: An interpreter translates code written in a high-level programming language into machine code line-by-line as the code runs.
+            An interpreter is a program that directly executes the instructions in a high-level language, without converting it into machine code. 
+            In programming, we can execute a program in two ways. Firstly, through compilation and secondly, through an interpreter. The common way is to use a compiler.
+  
   Keywords are reserved words used by the compiler. It tells the compiler that the keyword has a specific meaning AND it cannot be used for another purpose.
 
   
