@@ -369,7 +369,8 @@ Images
 …
 
 Arrays are classified as Homogeneous Data Structures because they store elements of the same type.
-They can store numbers, strings, boolean values (true and false), characters, and so on, but once you define the type of values that your array will store, all its elements must be of that same type. You can’t “mix” different types of data.
+They can store numbers, strings, boolean values (true and false), characters, and so on, 
+     but once you define the type of values that your array will store, all its elements must be of that same type. You can’t “mix” different types of data.
 
    limitations of arrays?
 If you need to remove any element from the middle of the array, we cannot have gaps in between. We have to delete the element and shift the rest of the elements to left by one position.
