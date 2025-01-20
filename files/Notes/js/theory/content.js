@@ -10,7 +10,10 @@ Error message list: Display errors, warnings, and messages generated during comp
 Autocomplete: Anticipate what the programmer is going to type next 
 IDEs can help programmers focus on logic in their code instead of learning about and manually integrating different software tools.  
 
+Number :-
+  an arithmetical value, expressed by a word, symbol, or figure, representing a particular quantity and used in counting and making calculations.
 
+  
   Alphabet 
 a set of symbols used to build words of a certain language. Eg. The latin alphabet for English, Devanagari for Hindi, Kanji for Japanese, etc.
 
